@@ -672,7 +672,7 @@ export function RenovationDashboard() {
       setResults(result);
       setStep(4);
     } catch (err: any) {
-      setError(err.message || 'Failed to process renovation. Please ensure the Phase 2 backend is running on port 5000.');
+      setError(err.message || 'Failed to connect to the AI Renovation Service. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -736,10 +736,9 @@ export function RenovationDashboard() {
           <div className="mb-6 flex items-start space-x-3 bg-red-50 border border-red-200 rounded-xl p-4">
             <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-sm font-semibold text-red-700">AI Backend is not running</p>
+              <p className="text-sm font-semibold text-red-700">AI Service is currently offline</p>
               <p className="text-xs text-red-600 mt-0.5">
-                Start the Phase 2 Flask backend first:
-                <code className="ml-1 bg-red-100 px-1 rounded">cd d:\exp\phase2\backend &amp;&amp; python app.py</code>
+                We are experiencing a temporary connection issue. Our team has been notified.
               </p>
             </div>
           </div>
