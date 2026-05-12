@@ -1,10 +1,6 @@
 import numpy as np
-import tensorflow as tf
-from tensorflow.keras.applications import MobileNetV2
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-from ultralytics import YOLO
-from config import Config
 import os
+from config import Config
 
 class VisionAnalyzer:
     """Handles vision-based analysis using MobileNetV2 and YOLO"""
@@ -17,6 +13,9 @@ class VisionAnalyzer:
     def _load_models(self):
         """Load pretrained models"""
         try:
+            import tensorflow as tf
+            from tensorflow.keras.applications import MobileNetV2
+            
             # Load MobileNetV2 for feature extraction
             self.mobilenet = MobileNetV2(
                 weights='imagenet',
@@ -31,6 +30,7 @@ class VisionAnalyzer:
             self.mobilenet = None
         
         try:
+            from ultralytics import YOLO
             # Load YOLO for object detection
             if os.path.exists(Config.YOLO_MODEL_PATH):
                 self.yolo = YOLO(Config.YOLO_MODEL_PATH)
@@ -61,6 +61,9 @@ class VisionAnalyzer:
             }
         
         try:
+            import tensorflow as tf
+            from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+            
             # Resize for MobileNetV2 (224x224)
             img_resized = tf.image.resize(img_array, (224, 224))
             

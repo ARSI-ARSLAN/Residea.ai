@@ -2,7 +2,6 @@ import requests
 import os
 import base64
 from config import Config
-from PIL import Image
 import io
 
 class ImageGenerator:
@@ -93,6 +92,7 @@ class ImageGenerator:
                 )
                 
                 # Copy the generated image
+                from PIL import Image
                 img = Image.open(result)
                 img.save(output_path)
                 
@@ -243,6 +243,7 @@ class ImageGenerator:
         """
         try:
             # Load original image
+            from PIL import Image
             img = Image.open(image_path)
             
             # Apply simple filter to simulate "renovation"
@@ -278,6 +279,7 @@ class ImageGenerator:
     
     def _save_generated_image(self, base64_data):
         """Save base64 image data to file"""
+        from PIL import Image
         image_data = base64.b64decode(base64_data)
         img = Image.open(io.BytesIO(image_data))
         
@@ -291,6 +293,7 @@ class ImageGenerator:
     
     def _download_and_save(self, url):
         """Download image from URL and save"""
+        from PIL import Image
         response = requests.get(url)
         img = Image.open(io.BytesIO(response.content))
         
@@ -305,6 +308,7 @@ class ImageGenerator:
     def validate_output(self, image_path):
         """Validate generated image"""
         try:
+            from PIL import Image
             img = Image.open(image_path)
             
             # Check resolution
