@@ -16,13 +16,29 @@ app = Flask(__name__)
 app.config.from_object(Config)
 CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000", "*"]}})
 
-# Initialize components
-preprocessor = ImagePreprocessor()
-vision_analyzer = VisionAnalyzer()
-fusion = MultimodalFusion()
-renovation_engine = RenovationEngine()
-prompt_builder = PromptBuilder()
-image_generator = ImageGenerator()
+# Components (Lazy loaded)
+preprocessor = None
+vision_analyzer = None
+fusion = None
+renovation_engine = None
+prompt_builder = None
+image_generator = None
+
+def get_components():
+    """Lazy load components only when needed"""
+    global preprocessor, vision_analyzer, fusion, renovation_engine, prompt_builder, image_generator
+    
+    if preprocessor is None:
+        print("🤖 Loading AI components for the first time...")
+        preprocessor = ImagePreprocessor()
+        vision_analyzer = VisionAnalyzer()
+        fusion = MultimodalFusion()
+        renovation_engine = RenovationEngine()
+        prompt_builder = PromptBuilder()
+        image_generator = ImageGenerator()
+        print("✅ All components loaded!")
+    
+    return preprocessor, vision_analyzer, fusion, renovation_engine, prompt_builder, image_generator
 
 def allowed_file(filename):
     """Check if file extension is allowed"""
@@ -106,6 +122,9 @@ def analyze_and_generate():
         if metadata['room_type'] not in Config.SUPPORTED_ROOMS:
             return jsonify({'error': f'Invalid room type. Supported: {Config.SUPPORTED_ROOMS}'}), 400
         
+        # Get lazy-loaded components
+        preprocessor, vision_analyzer, fusion, renovation_engine, prompt_builder, image_generator = get_components()
+
         # PHASE 3: Preprocessing
         print("📸 Preprocessing image...")
         preprocess_result = preprocessor.preprocess(filepath)
