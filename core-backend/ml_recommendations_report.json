@@ -1,0 +1,455 @@
+{
+  "test_date": "2025-12-11",
+  "total_properties_in_db": 4165,
+  "ml_models_loaded": true,
+  "test_cases": [
+    {
+      "test_case_name": "Test Case 1: F-6 Location, 9-80 Crore Budget, 4 Bedrooms",
+      "input_preferences": {
+        "city": "Islamabad",
+        "min_budget": 90000000,
+        "max_budget": 800000000,
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "preferred_locations": [
+          "F-6"
+        ],
+        "property_types": [
+          "House",
+          "Flat"
+        ]
+      },
+      "filtering_stats": {
+        "total_in_db": 4165,
+        "after_filters": 5,
+        "tested_properties": 5,
+        "recommendations_returned": 5
+      },
+      "ml_recommendations": [
+        {
+          "rank": 1,
+          "property_id": 16470,
+          "title": "Property in Islamabad",
+          "location": "F-6 Sector 1, Islamabad",
+          "price_pkr": 650000000.0,
+          "price_crore": 65.0,
+          "bedrooms": 5,
+          "bathrooms": 6,
+          "area_sqft": 1422,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.01,
+            "roi_5yr": 0.04
+          },
+          "amenity_scores": {
+            "hospital": 0.5074165245917805,
+            "school": 0.4782662589078114,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.16428046391659865
+          }
+        },
+        {
+          "rank": 2,
+          "property_id": 16265,
+          "title": "Property in Islamabad",
+          "location": "F-6 Sector 1, Islamabad",
+          "price_pkr": 230000000.0,
+          "price_crore": 23.0,
+          "bedrooms": 4,
+          "bathrooms": 5,
+          "area_sqft": 4624,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.01,
+            "roi_5yr": 0.04
+          },
+          "amenity_scores": {
+            "hospital": 0.5074165245917805,
+            "school": 0.4782662589078114,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.16428046391659865
+          }
+        },
+        {
+          "rank": 3,
+          "property_id": 16205,
+          "title": "Property in Islamabad",
+          "location": "F-6 Islamabad",
+          "price_pkr": 220000000.0,
+          "price_crore": 22.0,
+          "bedrooms": 4,
+          "bathrooms": 5,
+          "area_sqft": 5440,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.01,
+            "roi_5yr": 0.04
+          },
+          "amenity_scores": {
+            "hospital": 0.4156675526604441,
+            "school": 0.5369045500143158,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.15876201711246
+          }
+        },
+        {
+          "rank": 4,
+          "property_id": 14870,
+          "title": "Property in Islamabad",
+          "location": "F-6 Islamabad",
+          "price_pkr": 347100000.0,
+          "price_crore": 34.71,
+          "bedrooms": 5,
+          "bathrooms": 6,
+          "area_sqft": 7078,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.01,
+            "roi_5yr": 0.04
+          },
+          "amenity_scores": {
+            "hospital": 0.4156675526604441,
+            "school": 0.5369045500143158,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.15876201711246
+          }
+        },
+        {
+          "rank": 5,
+          "property_id": 14726,
+          "title": "Property in Islamabad",
+          "location": "F-6 Islamabad",
+          "price_pkr": 334700000.0,
+          "price_crore": 33.47,
+          "bedrooms": 5,
+          "bathrooms": 6,
+          "area_sqft": 5989,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.01,
+            "roi_5yr": 0.04
+          },
+          "amenity_scores": {
+            "hospital": 0.4156675526604441,
+            "school": 0.5369045500143158,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.15876201711246
+          }
+        }
+      ]
+    },
+    {
+      "test_case_name": "Test Case 2: Bahria Town, 2-5 Crore Budget, 3 Bedrooms",
+      "input_preferences": {
+        "city": "Islamabad",
+        "min_budget": 20000000,
+        "max_budget": 50000000,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "preferred_locations": [
+          "Bahria Town"
+        ],
+        "property_types": [
+          "House"
+        ]
+      },
+      "filtering_stats": {
+        "total_in_db": 4165,
+        "after_filters": 23,
+        "tested_properties": 20,
+        "recommendations_returned": 5
+      },
+      "ml_recommendations": [
+        {
+          "rank": 1,
+          "property_id": 15433,
+          "title": "Property in Islamabad",
+          "location": "Bahria Town Islamabad",
+          "price_pkr": 22200000.0,
+          "price_crore": 2.22,
+          "bedrooms": 4,
+          "bathrooms": 3,
+          "area_sqft": 2964,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.0,
+            "roi_5yr": 0.01
+          },
+          "amenity_scores": {
+            "hospital": 0.1091534964378364,
+            "school": 0.1063383610517498,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.0359153095815977
+          }
+        },
+        {
+          "rank": 2,
+          "property_id": 15372,
+          "title": "Property in Islamabad",
+          "location": "Bahria Town Islamabad",
+          "price_pkr": 25100000.0,
+          "price_crore": 2.51,
+          "bedrooms": 3,
+          "bathrooms": 2,
+          "area_sqft": 1360,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.0,
+            "roi_5yr": 0.01
+          },
+          "amenity_scores": {
+            "hospital": 0.1091534964378364,
+            "school": 0.1063383610517498,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.0359153095815977
+          }
+        },
+        {
+          "rank": 3,
+          "property_id": 15323,
+          "title": "Property in Islamabad",
+          "location": "Bahria Town Islamabad",
+          "price_pkr": 52700000.0,
+          "price_crore": 5.27,
+          "bedrooms": 4,
+          "bathrooms": 7,
+          "area_sqft": 2720,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.0,
+            "roi_5yr": 0.01
+          },
+          "amenity_scores": {
+            "hospital": 0.1091534964378364,
+            "school": 0.1063383610517498,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.0359153095815977
+          }
+        },
+        {
+          "rank": 4,
+          "property_id": 15302,
+          "title": "Property in Islamabad",
+          "location": "Bahria Town Islamabad",
+          "price_pkr": 40000000.0,
+          "price_crore": 4.0,
+          "bedrooms": 4,
+          "bathrooms": 6,
+          "area_sqft": 2720,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.0,
+            "roi_5yr": 0.01
+          },
+          "amenity_scores": {
+            "hospital": 0.1091534964378364,
+            "school": 0.1063383610517498,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.0359153095815977
+          }
+        },
+        {
+          "rank": 5,
+          "property_id": 15181,
+          "title": "Property in Islamabad",
+          "location": "Bahria Town Islamabad",
+          "price_pkr": 20300000.0,
+          "price_crore": 2.03,
+          "bedrooms": 3,
+          "bathrooms": 5,
+          "area_sqft": 3046,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.0,
+            "roi_5yr": 0.01
+          },
+          "amenity_scores": {
+            "hospital": 0.1091534964378364,
+            "school": 0.1063383610517498,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.0359153095815977
+          }
+        }
+      ]
+    },
+    {
+      "test_case_name": "Test Case 3: DHA, 10-20 Crore Budget, 5 Bedrooms",
+      "input_preferences": {
+        "city": "Islamabad",
+        "min_budget": 100000000,
+        "max_budget": 200000000,
+        "bedrooms": 5,
+        "bathrooms": 4,
+        "preferred_locations": [
+          "DHA"
+        ],
+        "property_types": [
+          "House"
+        ]
+      },
+      "filtering_stats": {
+        "total_in_db": 4165,
+        "after_filters": 381,
+        "tested_properties": 20,
+        "recommendations_returned": 5
+      },
+      "ml_recommendations": [
+        {
+          "rank": 1,
+          "property_id": 16495,
+          "title": "Property in Islamabad",
+          "location": "DHA Defence Phase 2, Islamabad",
+          "price_pkr": 119000000.0,
+          "price_crore": 11.9,
+          "bedrooms": 4,
+          "bathrooms": 6,
+          "area_sqft": 5440,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.01,
+            "roi_5yr": 0.04
+          },
+          "amenity_scores": {
+            "hospital": 0.4130098901430992,
+            "school": 0.4772325365057112,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.14837373777480173
+          }
+        },
+        {
+          "rank": 2,
+          "property_id": 16462,
+          "title": "Property in Islamabad",
+          "location": "DHA Defence Phase 3, Islamabad",
+          "price_pkr": 80000000.0,
+          "price_crore": 8.0,
+          "bedrooms": 4,
+          "bathrooms": 5,
+          "area_sqft": 6800,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.0,
+            "roi_5yr": 0.01
+          },
+          "amenity_scores": {
+            "hospital": 0.1028978529660971,
+            "school": 0.1116884485325606,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.03576438358310962
+          }
+        },
+        {
+          "rank": 3,
+          "property_id": 16421,
+          "title": "Property in Islamabad",
+          "location": "DHA Defence Phase 2, Islamabad",
+          "price_pkr": 140000000.0,
+          "price_crore": 14.0,
+          "bedrooms": 5,
+          "bathrooms": 6,
+          "area_sqft": 500,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.01,
+            "roi_5yr": 0.04
+          },
+          "amenity_scores": {
+            "hospital": 0.4130098901430992,
+            "school": 0.4772325365057112,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.14837373777480173
+          }
+        },
+        {
+          "rank": 4,
+          "property_id": 16418,
+          "title": "Property in Islamabad",
+          "location": "DHA Defence Phase 2, Islamabad",
+          "price_pkr": 119000000.0,
+          "price_crore": 11.9,
+          "bedrooms": 4,
+          "bathrooms": 5,
+          "area_sqft": 500,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.01,
+            "roi_5yr": 0.04
+          },
+          "amenity_scores": {
+            "hospital": 0.4130098901430992,
+            "school": 0.4772325365057112,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.14837373777480173
+          }
+        },
+        {
+          "rank": 5,
+          "property_id": 16391,
+          "title": "Property in Islamabad",
+          "location": "DHA Defence, Islamabad",
+          "price_pkr": 120000000.0,
+          "price_crore": 12.0,
+          "bedrooms": 4,
+          "bathrooms": 1,
+          "area_sqft": 5445,
+          "property_type": "unknown",
+          "ml_score": 0.5,
+          "match_percentage": 5,
+          "roi_estimates": {
+            "roi_1yr": 0.01,
+            "roi_5yr": 0.03
+          },
+          "amenity_scores": {
+            "hospital": 0.3068749174035894,
+            "school": 0.3470718329364838,
+            "metro": 0.0,
+            "park": 0.0,
+            "average": 0.10899112505667886
+          }
+        }
+      ]
+    }
+  ]
+}

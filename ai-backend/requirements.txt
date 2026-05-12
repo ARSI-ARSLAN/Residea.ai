@@ -1,0 +1,12 @@
+flask==3.0.0
+flask-cors==4.0.0
+werkzeug==3.0.1
+numpy==1.26.2
+pillow==10.1.0
+opencv-python-headless==4.8.1.78
+tensorflow-cpu==2.15.0
+ultralytics==8.0.220
+python-decouple==3.8
+requests==2.31.0
+gunicorn==21.2.0
+python-dotenv==1.0.0

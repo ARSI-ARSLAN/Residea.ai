@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ML Recommendation Test Report</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            @page { margin: 2cm; }
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            page-break-after: avoid;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+            page-break-after: avoid;
+        }
+        h3 {
+            color: #7f8c8d;
+            margin-top: 20px;
+            page-break-after: avoid;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            page-break-inside: avoid;
+        }
+        pre code {
+            background-color: transparent;
+            color: #ecf0f1;
+        }
+        strong {
+            color: #e74c3c;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+    <h1>ML Recommendation Model - Test Report
+
+#<h1>Executive Summary
+
+<strong>Date:<strong> 2025-12-11  
+<strong>Total Properties in Database:<strong> 4,165  
+<strong>ML Models Loaded:<strong> ✅ Yes  
+<strong>Test Cases Run:<strong> 3
+
+#<h1>🚨 CRITICAL FINDING
+
+<strong>All properties are receiving the SAME ML score of 0.5<strong>, which indicates the ML model is using <strong>fallback scoring<strong> instead of actual XGBoost predictions.
+
+---
+
+#<h1>Test Results
+</h1>
+<h2><h1>Test Case 1: F-6 Location, 9-80 Crore Budget, 4 Bedrooms
+
+<strong>Input Preferences:<strong>
+<pre><code class="json">
+{
+  "city": "Islamabad",
+  "min_budget": 90000000,
+  "max_budget": 800000000,
+  "bedrooms": 4,
+  "bathrooms": 3,
+  "preferred_locations": ["F-6"],
+  "property_types": ["House", "Flat"]
+}
+</code></pre>
+
+<strong>Filtering Results:<strong>
+- Total properties in DB: 4,165
+- After filters: <strong>5 properties<strong>
+- Properties tested: 5
+- Recommendations returned: 5
+
+<strong>Top 5 ML Recommendations:<strong>
+
+| Rank | Property ID | Location | Price (Cr) | Bedrooms | <strong>ML Score<strong> | Match % |
+|------|-------------|----------|------------|----------|--------------|---------|
+| 1 | 16470 | F-6 Sector 1 | 65.0 | 5 | <strong>0.5<strong> | 5% |
+| 2 | 16265 | F-6 Sector 1 | 23.0 | 4 | <strong>0.5<strong> | 5% |
+| 3 | 16205 | F-6 | 22.0 | 4 | <strong>0.5<strong> | 5% |
+| 4 | 14870 | F-6 | 34.71 | 5 | <strong>0.5<strong> | 5% |
+| 5 | 14726 | F-6 | 33.47 | 5 | <strong>0.5<strong> | 5% |
+
+⚠️ <strong>Issue:<strong> All scores are identical (0.5), no differentiation between properties
+
+---
+</h1>
+<h2><h1>Test Case 2: Bahria Town, 2-5 Crore Budget, 3 Bedrooms
+
+<strong>Input Preferences:<strong>
+<pre><code class="json">
+{
+  "city": "Islamabad",
+  "min_budget": 20000000,
+  "max_budget": 50000000,
+  "bedrooms": 3,
+  "bathrooms": 2,
+  "preferred_locations": ["Bahria Town"],
+  "property_types": ["House"]
+}
+</code></pre>
+
+<strong>Filtering Results:<strong>
+- Total properties in DB: 4,165
+- After filters: <strong>23 properties<strong>
+- Properties tested: 20
+- Recommendations returned: 5
+
+<strong>Top 5 ML Recommendations:<strong>
+
+| Rank | Property ID | Location | Price (Cr) | Bedrooms | <strong>ML Score<strong> | Match % |
+|------|-------------|----------|------------|----------|--------------|---------|
+| 1 | 15433 | Bahria Town | 2.22 | 4 | <strong>0.5<strong> | 5% |
+| 2 | 15372 | Bahria Town | 2.51 | 3 | <strong>0.5<strong> | 5% |
+| 3 | 15323 | Bahria Town | 5.27 | 4 | <strong>0.5<strong> | 5% |
+| 4 | 15302 | Bahria Town | 4.0 | 4 | <strong>0.5<strong> | 5% |
+| 5 | 15181 | Bahria Town | 2.03 | 3 | <strong>0.5<strong> | 5% |
+
+⚠️ <strong>Issue:<strong> All scores are identical (0.5), no differentiation between properties
+
+---
+</h1>
+<h2><h1>Test Case 3: DHA, 10-20 Crore Budget, 5 Bedrooms
+
+<strong>Input Preferences:<strong>
+<pre><code class="json">
+{
+  "city": "Islamabad",
+  "min_budget": 100000000,
+  "max_budget": 200000000,
+  "bedrooms": 5,
+  "bathrooms": 4,
+  "preferred_locations": ["DHA"],
+  "property_types": ["House"]
+}
+</code></pre>
+
+<strong>Filtering Results:<strong>
+- Total properties in DB: 4,165
+- After filters: <strong>381 properties<strong>
+- Properties tested: 20
+- Recommendations returned: 5
+
+<strong>Top 5 ML Recommendations:<strong>
+
+| Rank | Property ID | Location | Price (Cr) | Bedrooms | <strong>ML Score<strong> | Match % |
+|------|-------------|----------|------------|----------|--------------|---------|
+| 1 | 16495 | DHA Phase 2 | 11.9 | 4 | <strong>0.5<strong> | 5% |
+| 2 | 16462 | DHA Phase 3 | 8.0 | 4 | <strong>0.5<strong> | 5% |
+| 3 | 16421 | DHA Phase 2 | 14.0 | 5 | <strong>0.5<strong> | 5% |
+| 4 | 16418 | DHA Phase 2 | 11.9 | 4 | <strong>0.5<strong> | 5% |
+| 5 | 16391 | DHA Defence | 12.0 | 4 | <strong>0.5<strong> | 5% |
+
+⚠️ <strong>Issue:<strong> All scores are identical (0.5), no differentiation between properties
+
+---
+
+#<h1>Problem Analysis
+</h1>
+<h2><h1>What's Wrong?
+
+1. <strong>Identical Scores:<strong> All properties receive ML score of 0.5
+2. <strong>Low Match Percentage:<strong> All properties show 5% match (0.5 * 10 = 5)
+3. <strong>No Ranking:<strong> Properties are not being differentiated by the ML model
+</h1>
+<h2><h1>Why This Happens?
+
+Looking at the code in <code>PropertyRanker.rank_properties()<code>:
+
+</code></pre>python
+<h1>From ranker.py line 46
+return [(prop, 0.5) for prop in properties_queryset]
+</code></pre>
+
+This is the <strong>fallback scoring<strong> that returns when:
+- User has no preferences
+- ML models are not loaded
+- Feature engineering fails
+- Model prediction fails
+</h1>
+<h2><h1>Root Cause
+
+The ML model is likely encountering an error during:
+1. <strong>Feature Engineering<strong> - Features may not be prepared correctly
+2. <strong>Model Prediction<strong> - XGBoost model may be failing silently
+3. <strong>Error Handling<strong> - Exceptions are being caught and fallback is used
+
+---
+
+#<h1>Expected vs Actual Behavior
+</h1>
+<h2><h1>Expected (ML Model Working):
+<pre><code class="json">
+{
+  "rank": 1,
+  "property_id": 16470,
+  "ml_score": 8.7,  // ← Should vary based on features
+  "match_percentage": 87
+}
+</code></pre>
+</h1>
+<h2><h1>Actual (Fallback Scoring):
+<pre><code class="json">
+{
+  "rank": 1,
+  "property_id": 16470,
+  "ml_score": 0.5,  // ← Same for all properties
+  "match_percentage": 5
+}
+</code></pre>
+
+---
+
+#<h1>Recommendations
+</h1>
+<h2><h1>Immediate Actions Required:
+
+1. <strong>Check Feature Engineering<strong>
+   - Verify <code>FeatureEngineer.prepare_ranking_features()<code> is working
+   - Ensure all required features are present
+   - Check for missing data that might cause errors
+
+2. <strong>Debug Model Prediction<strong>
+   - Add detailed logging in <code>PropertyRanker.rank_properties()<code>
+   - Catch and log specific exceptions
+   - Verify XGBoost model input format
+
+3. <strong>Verify Model Files<strong>
+   - Confirm <code>xgbr_ranker (2).pkl<code> is valid
+   - Check model was trained with correct features
+   - Verify feature names match between training and prediction
+
+4. <strong>Test Individual Components<strong>
+   - Test feature engineering separately
+   - Test model prediction with sample data
+   - Verify end-to-end flow
+
+---
+
+#<h1>JSON Output
+
+Full JSON report available at: <code>backend/ml_recommendations_report.json<code>
+
+<strong>Sample Output:<strong>
+<pre><code class="json">
+{
+  "test_date": "2025-12-11",
+  "total_properties_in_db": 4165,
+  "ml_models_loaded": true,
+  "test_cases": [
+    {
+      "test_case_name": "Test Case 1: F-6 Location, 9-80 Crore Budget, 4 Bedrooms",
+      "ml_recommendations": [
+        {
+          "rank": 1,
+          "property_id": 16470,
+          "location": "F-6 Sector 1, Islamabad",
+          "price_crore": 65.0,
+          "ml_score": 0.5,
+          "match_percentage": 5
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+
+---
+
+#<h1>Conclusion
+
+✅ <strong>ML models are loaded<strong>  
+✅ <strong>Filtering is working correctly<strong>  
+✅ <strong>API is returning responses<strong>  
+❌ <strong>ML model is NOT producing varied scores<strong>  
+❌ <strong>Fallback scoring is being used instead<strong>
+
+<strong>Next Step:<strong> Debug the feature engineering and model prediction pipeline to identify why the XGBoost model is not producing differentiated scores.
+
+    
+    <hr style="margin-top: 40px;">
+    <p style="text-align: center; color: #7f8c8d; font-size: 0.9em;">
+        Generated on 2025-12-11 | Residea.ai ML Recommendation System
+    </p>
+    
+    <script>
+        // Instructions for printing to PDF
+        console.log("To save as PDF: Press Ctrl+P (or Cmd+P on Mac) and select 'Save as PDF'");
+    </script>
+</body>
+</html>

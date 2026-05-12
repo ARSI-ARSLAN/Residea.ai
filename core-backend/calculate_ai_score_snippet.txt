@@ -1,0 +1,14 @@
+  const calculateAIScore = (property: any) => {
+    // Use ML model match_percentage if available
+    if (property.match_percentage !== undefined && property.match_percentage !== null && property.match_percentage > 0) {
+      return property.match_percentage;
+    }
+    
+    // Calculate from average amenity score (0-1 range, convert to percentage)
+    const amenityScore = (property.average_amenity_score || 0) * 100;
+    const verifiedBonus = property.verified ? 10 : 0;
+    const score = Math.min(Math.round(amenityScore + verifiedBonus), 99);
+    
+    // Return at least 1 to avoid showing 0%
+    return score > 0 ? score : 1;
+  };
