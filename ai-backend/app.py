@@ -14,7 +14,7 @@ from image_generator import ImageGenerator
 
 app = Flask(__name__)
 app.config.from_object(Config)
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000", "*"]}})
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Components (Lazy loaded)
 preprocessor = None
