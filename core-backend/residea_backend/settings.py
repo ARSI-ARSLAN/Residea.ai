@@ -187,13 +187,8 @@ SIMPLE_JWT = {
 ML_MODELS_DIR = BASE_DIR / 'Models Trained'
 
 # CORS Settings
-CORS_ALLOWED_ORIGINS = config(
-    'CORS_ALLOWED_ORIGINS',
-    default='http://localhost:3000,http://localhost:3001,http://localhost:5173,http://localhost:5174'
-).split(',')
-
-if DEBUG:
-    CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 # Swagger Settings
 SWAGGER_SETTINGS = {
