@@ -2,6 +2,7 @@ services:
   - type: web
     name: residea-core-api
     env: python
+    rootDir: core-backend
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate
     startCommand: gunicorn residea_backend.wsgi:application
     envVars:
