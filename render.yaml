@@ -7,6 +7,8 @@ services:
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate
     startCommand: gunicorn residea_backend.wsgi:application
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.7"
       - key: DEBUG
         value: "False"
       - key: SECRET_KEY
