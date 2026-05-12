@@ -2,6 +2,7 @@ services:
   - type: web
     name: residea-core-api
     env: python
+    plan: free
     rootDir: core-backend
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate
     startCommand: gunicorn residea_backend.wsgi:application
@@ -13,10 +14,12 @@ services:
       - key: USE_SQLITE
         value: "False"
       - key: DATABASE_URL
-        fromDatabase:
-          name: residea-db
-          property: connectionString
-
-databases:
-  - name: residea-db
-    plan: free
+        sync: false # This tells Render to ask YOU for the string
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: ALLOWED_HOSTS
+        value: "*"
