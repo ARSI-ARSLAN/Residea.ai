@@ -7,12 +7,22 @@ django.setup()
 from apps.users.models import User
 
 def create_admin():
-    if not User.objects.filter(username='admin').exists():
-        print("Creating admin user...")
-        User.objects.create_superuser('admin', 'admin@example.com', 'Admin123!')
-        print("Admin user created: admin / Admin123!")
+    email = 'admin@example.com'
+    password = 'Admin123!'
+    username = 'admin'
+    
+    if not User.objects.filter(email=email).exists():
+        print(f"🤖 Creating superuser with email: {email}...")
+        User.objects.create_superuser(
+            username=username,
+            email=email,
+            password=password,
+            first_name='Admin',
+            last_name='User'
+        )
+        print("✅ Superuser created successfully!")
     else:
-        print("Admin user already exists.")
+        print("ℹ️ Superuser already exists.")
 
 if __name__ == "__main__":
     create_admin()
