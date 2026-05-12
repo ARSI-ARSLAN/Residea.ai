@@ -40,9 +40,6 @@ urlpatterns = [
 
     # Admin API (separate from Django admin)
     path('api/admin/', include('apps.admin_api.urls')),
-    
-    # Temporary Setup (Remove after use)
-    path('api/setup-admin/', lambda r: __import__('django.http').http.HttpResponse(__import__('create_admin').create_admin() or "Admin Setup Triggered! Check Logs.")),
 ]
 
 # Serve media files in development
