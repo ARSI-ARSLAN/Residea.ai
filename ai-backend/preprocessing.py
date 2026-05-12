@@ -1,6 +1,4 @@
-import cv2
 import numpy as np
-from PIL import Image
 from config import Config
 
 class ImagePreprocessor:
@@ -30,6 +28,7 @@ class ImagePreprocessor:
         
         try:
             # Load image
+            from PIL import Image
             img = Image.open(image_path)
             
             # Convert to RGB if needed
@@ -51,6 +50,7 @@ class ImagePreprocessor:
                 warnings.append(blur_msg)
             
             # Resize image
+            from PIL import Image
             img_resized = img.resize(self.target_size, Image.Resampling.LANCZOS)
             
             # Normalize pixel values
@@ -87,6 +87,7 @@ class ImagePreprocessor:
     
     def _get_brightness_score(self, img_array):
         """Calculate average brightness"""
+        import cv2
         gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
         return np.mean(gray)
     
@@ -99,12 +100,14 @@ class ImagePreprocessor:
     
     def _get_blur_score(self, img_array):
         """Calculate blur score using Laplacian variance"""
+        import cv2
         gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
         laplacian_var = cv2.Laplacian(gray, cv2.CV_64F).var()
         return laplacian_var
     
     def get_lighting_histogram(self, img_array):
         """Generate lighting histogram for analysis"""
+        import cv2
         gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
         hist = cv2.calcHist([gray], [0], None, [256], [0, 256])
         
