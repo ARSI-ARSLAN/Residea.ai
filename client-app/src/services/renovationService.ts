@@ -1,7 +1,7 @@
 // Renovation Service — calls Phase 2 Flask backend at http://localhost:5000
 // In dev, requests go through Vite proxy at /renovation-api
 
-const RENOVATION_API_BASE = '/renovation-api';
+const RENOVATION_API_BASE = import.meta.env.VITE_AI_API_URL || '';
 
 export interface RenovationMetadata {
   room_type: string;
